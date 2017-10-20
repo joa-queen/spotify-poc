@@ -1,0 +1,29 @@
+.Album {
+  list-style: none;
+  text-align: left;
+}
+
+.Album a {
+  width: 100%;
+  display: flex;
+  padding: 5px 0;
+  line-height: 32px;
+  border-bottom: 1px solid #999;
+  color: #000;
+  text-decoration: none;
+}
+
+.Album a:hover {
+  background-color: #eee;
+}
+
+.Album span {
+  color: #999;
+}
+
+.Album img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin-right: 10px;
+}
