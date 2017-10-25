@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import './AlbumList.css';
 import Loading from '../Loading/Loading';
+import List from './List';
+import Empty from './Empty';
 
 const AlbumList = ({ searching, data }) => (
   <div>
@@ -11,14 +12,10 @@ const AlbumList = ({ searching, data }) => (
       : (data
         ? (
           <ul>
-            {data.albums.items.map(album => (
-              <li key={album.id} className="Album">
-                <Link to={`/album/${album.id}`}>
-                  <img src={album.images[0].url} alt="Cover" />
-                  <div className="AlbumName">{album.name} <span>- {album.artists[0].name}</span></div>
-                </Link>
-              </li>
-            ))}
+            { data.albums.items.length > 0
+              ? <List albums={data.albums.items} />
+              : <Empty />
+            }
           </ul>
         )
         : null
